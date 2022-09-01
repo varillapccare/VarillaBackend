@@ -76,8 +76,8 @@ app.put("/phone", async (req, res) => {
 
 app.get("/users", async (req, res) => {
   let filter = {};
-  if (req.body.activationKey) {
-    filter = { activationKey: req.body.activationKey };
+  if (req.query.activationKey) {
+    filter = { activationKey: req.query.activationKey };
   }
   const users = await User.find(filter);
 
